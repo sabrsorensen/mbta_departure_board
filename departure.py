@@ -1,5 +1,12 @@
+'''
+Module to group departure data and format for rendering
+'''
+
 
 def print_departure_header():
+    '''
+    Helper method to generate table header
+    '''
     headers = ["Destination", "Departure Time",
                "Status", "Train #", "Track #"]
     formatted_headers = []
@@ -11,6 +18,10 @@ def print_departure_header():
 
 
 class Departure():
+    '''
+    Class to bundle and format the relevant info of an entry on a departure board
+    '''
+
     def __init__(self, destination: str, status: str, train: int, track: int, departure_time: str):
         self.destination = destination
         self.status = status
@@ -18,7 +29,10 @@ class Departure():
         self.track = track
         self.departure_time = departure_time
 
-    def __str__(self):
+    def print_departure(self):
+        '''
+        Generate the HTML table equivalent of this departure
+        '''
         return f'''<tr>
         <td>{self.destination}</td>
         <td>{self.departure_time}</td>
@@ -26,6 +40,3 @@ class Departure():
         <td>{self.train}</td>
         <td>{self.track}</td>
         </tr>'''
-
-    def print_departure(self):
-        return self.__str__()
