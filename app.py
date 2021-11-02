@@ -75,3 +75,6 @@ def generate_departure_table():
         table += departure_row
     table += '</tbody></Table></html>'
     return table
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=5000)
