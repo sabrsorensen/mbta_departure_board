@@ -59,13 +59,13 @@ def generate_departure_table():
 
         # Ignore arrivals with no departures (final stop?)
         if departure_time is not None:
-            time_fmt = "%H:%M"
+            time_fmt = "%I:%M %p"  # HH:MM AM/PM
             departure_time = datetime.strptime(
                 departure_time, '%Y-%m-%dT%H:%M:%S%z')
             now = datetime.now(departure_time.tzinfo)
             if departure_time > now:
                 departures.append(Departure(destination, status,
-                                            vehicle, track, departure_time))
+                                            vehicle, track, departure_time.strftime(time_fmt)))
 
     departures.sort(key=lambda x: x.departure_time)
 
@@ -76,6 +76,7 @@ def generate_departure_table():
         table += departure_row
     table += '</tbody></Table></html>'
     return table
+
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0", port=5000)
