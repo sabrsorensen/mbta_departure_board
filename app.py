@@ -1,7 +1,6 @@
 from datetime import datetime
 import os
 
-from dateutil import tz
 from flask import Flask
 import jsonapi_requests
 
