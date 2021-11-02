@@ -39,6 +39,7 @@ def find_included_info_value(included_info: list, include_type: str, id: str, at
 
 
 @app.route("/")
+@app.route("/mbta")
 def generate_departure_table():
     departures = []
     predictions, included_info = get_stop_predictions(station_id)
