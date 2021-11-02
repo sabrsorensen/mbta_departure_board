@@ -1,0 +1,5 @@
+flask
+jsonapi_requests
+pymbta3
+python-dateutil
+tenacity==7.0.0

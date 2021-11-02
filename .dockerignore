@@ -1,0 +1,8 @@
+.devcontainer
+.dockerignore
+.git
+.github
+.vscode
+__pycache__
+**.pyc
+README.md

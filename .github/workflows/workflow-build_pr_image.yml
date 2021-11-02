@@ -1,0 +1,27 @@
+name: Test PR - Build image
+on:
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build_pr:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        architecture: [linux-arm-v7, linux-arm64, linux-amd64]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+        with:
+          version: latest
+
+      - name: Build images using buildx
+        run: ARCHITECTURE=${{ matrix.architecture }} .github/workflows/docker_build_pr.sh
