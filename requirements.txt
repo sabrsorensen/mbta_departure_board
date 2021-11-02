@@ -1,2 +1,3 @@
 flask
 jsonapi_requests
+tenacity==7.0.0
