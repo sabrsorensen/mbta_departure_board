@@ -22,7 +22,6 @@
 		"rangav.vscode-thunder-client",
 		"bmuskalla.vscode-tldr",
 		"redhat.vscode-yaml",
-		"sabrsorensen.party-owl-84"
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
