@@ -11,4 +11,5 @@ WORKDIR /app
 RUN pip install --no-cache -r requirements.txt
 
 EXPOSE 5000
-CMD python3 -m flask run
+ENTRYPOINT [ "python3" ]
+CMD ["app.py"]
