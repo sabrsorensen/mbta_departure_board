@@ -1,4 +1,4 @@
-# MTBA Departure Board
+# MBTA Departure Board
 
 ## How to run
 
